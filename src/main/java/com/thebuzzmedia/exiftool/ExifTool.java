@@ -1373,7 +1373,7 @@ public class ExifTool {
      */
     STAY_OPEN(8,36),
     /**
-     * Acitves the MWG modules. The Metadata Working Group (MWG) recommends
+     * Activates the MWG modules. The Metadata Working Group (MWG) recommends
      * techniques to allow certain overlapping EXIF, IPTC and XMP tags to be
      * reconciled when reading, and synchronized when writing. The MWG Composite tags
      * below are designed to aid in the implementation of these recommendations.
