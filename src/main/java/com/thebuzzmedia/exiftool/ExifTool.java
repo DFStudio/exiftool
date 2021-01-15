@@ -751,6 +751,15 @@ public class ExifTool {
           itemList.append(",");
         }
         itemList.append(item);
+        // TODO: intent was probably to replace newlines here,
+        //  but not changing to avoid breaking existing expectations
+        /*
+        String str = item.toString();
+        if (options.stripNewLines) {
+          str = str.replace("\n", " ");
+        }
+        itemList.append(str);
+        */
       }
       arg = String.format("-%s=%s",tagName, itemList);
     } else {
@@ -760,6 +769,10 @@ public class ExifTool {
       }
       if ( options.stripNewLines ) {
         value = value.toString().replaceAll("\n"," ");
+        // TODO: should probably be .replace() rather than .replaceAll();
+        //  (replace takes string literal, replaceAll takes regex)
+        //  not changing to avoid breaking existing expectations
+        // value = value.toString().replace("\n"," ");
       }
       arg = String.format("-%s=%s",tagName,value);
     }
